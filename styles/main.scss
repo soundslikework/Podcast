@@ -1,0 +1,443 @@
+@import "setup";
+@import "variables";
+
+/***** GENERAL DISPLAY *****/
+
+.wrapper {
+	max-width: 80%;
+	margin: 0 auto;
+}
+.contentBoxWhiteLine {
+	width: 100%;
+	height: 10px;
+	border-radius: 5px;
+	background: white;
+	opacity: 0.2;
+}
+.contentBoxGrayLine {
+	width: 80%;
+	height: 10px;
+	border-radius: 5px;
+	background: $gray;
+	opacity: 0.1;
+	margin-bottom: 5%;
+}
+
+/***** HEADER DISPLAYS *****/
+
+header {
+	background: url(../assets/hero.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100vh;
+	@media (max-width: 900px) {
+		background-position: center;
+	}
+}
+.headerLogo {
+	width: 100%;
+	height: 7vh;
+	display: flex;
+	align-items: center;
+}
+.headerLogo img {
+	margin: 0 auto;
+	display: block;
+}
+.headerContent {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 84vh;
+		@media (max-width: 900px) {
+			flex-direction: column;
+		}
+	.headerContentBox {
+	width: 50%;
+	padding: 10%;
+		@media (max-width: 900px) {
+			width: 100%;
+		}
+	}
+}
+.headerContentBoxTopRow {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.headerContentSocialBox {
+	border-top: 1px solid white;
+	padding-top: 8%;
+	width: 100%;
+	@media (max-width: 900px) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+/***** EPISODES DISPLAYS *****/
+
+main {
+	background: $darkgray;
+	padding: $section-padding;
+	padding-top: 0;
+	.episodes__titleWrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.episodeContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+	justify-content: space-between;
+	width: 100%;
+		@media (max-width: 900px){
+			flex-wrap: nowrap;
+			flex-direction: column;
+		}
+	}
+}
+.episodeContainer__ContentBox {
+	width: 48%;
+	margin: 2% 0;
+	padding: 4%;
+	transition: all 1s;
+		&:hover {
+			transform: scale(1.1);
+		}
+		@media (max-width:900px) {
+			width: 100%;
+		}
+}
+
+/***** ABOUT SECTION DISPLAYS *****/ 
+
+aside {
+	background:$white;
+	.left {
+		text-align: left;
+	}
+	.right {
+		text-align: right;
+		h3 {
+      		clear: both;
+    	}
+    	h2 {
+      		float: right;
+    	}
+    	.contentBoxGrayLine {
+      		float: right;
+    	}
+	}
+	.left, 
+	.right {
+		width: 50%;
+		padding: 4%;
+		position: relative;
+		@media (max-width:480px) {
+      		width: 100%;
+      	}
+		img {
+			max-width: 100%;
+		}
+	}
+	.aboutBoxesFirst, 
+	.aboutBoxesSecond {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: space-between;
+		@media (max-width: 480px) {
+			flex-direction: column;
+		}
+	}
+}
+
+/***** DONATE SECTION DISPLAYS *****/
+
+section {
+	background: linear-gradient(to right, rgba(5, 231, 143, 1), rgba(3, 225, 116, 1));
+	padding: $section-padding;
+	position: relative;
+	.donate-bg {
+		font-size: 120px;
+		text-transform: uppercase;
+		opacity: 0.2;
+		position: absolute;
+		top: calc(50% - 100px);
+		left: calc(50% - 245px);
+		@media (max-width: 900px) {
+			font-size: 90px;
+			top: calc(50% - 75px);
+			left: calc(50% - 186px);
+		}
+		@media (max-width: 600px) {
+			font-size: 80px;
+			top: calc(50% - 60px);
+			left: calc(50% - 165px);
+		}
+		@media (max-width: 480px) {
+			font-size: 60px;
+			top: calc(50% - 40px);
+			left: calc(50% - 125px);			
+		}	
+	}
+}
+
+/***** FOOTER FOOTER FOOTER DISPLAYS *****/
+
+footer {
+	background: $black;
+	padding: $section-padding;
+}
+.footerWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	@media (max-width: 900px) {
+		flex-wrap: wrap;
+	}
+	@media (max-width: 480px) {
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
+}
+.footerBox {
+	width: 24%;
+	margin: 1%;
+	@media (max-width: 900px) {
+		width: 48%;
+	}
+	@media (max-width: 480px) {
+		width: 98%;
+	}
+}
+.footer__Follow {
+	li {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		.left, 
+		.right {
+		width: 50%;
+		}
+		.right {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			a {
+				margin: 5%;
+			}
+			@media (max-width: 900px) {
+			justify-content: space-around;
+			}
+		}
+	}
+}
+.footer__Logo {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.footer__Links {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	@media (max-width: 480px) {
+		flex-direction: column;
+		margin-top: 2%;
+	}
+}
+.footer__ContentSocialBox {
+	width: 25%;
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	@media (max-width: 480px) {
+		width: 100%;
+		justify-content: space-between;
+	}
+}
+.footer__footerLinks {
+	ul {
+		@media (max-width: 480px) {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}	
+	}
+}
+.footer__Bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+/**** BUTTONS & HAMBURGER *****/
+
+.headerLinks {
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	border-bottom: 1px solid $gray;
+	@media (max-width: 480px) {
+		flex-direction: column;
+	}
+}
+.headerLinks ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	@media (max-width: 480px) {
+		display: none;
+		flex-direction: column;
+	}
+	li {
+		flex-direction: row;
+		@media (max-width: 480px) {
+			margin: 6% 0;
+			text-align: center;
+		}
+		a {
+		padding: 6px;
+		color: white;
+		transition: all 1s;
+		@media (max-width: 480px) {
+			width: 100%;
+			display: block;
+			padding: 0;
+		}
+		&:hover {
+			background: $green;
+			color: $gray;
+			}	
+		}
+	}
+}
+.nav__donateButton {
+	color: white;
+	border: 2px solid white;
+	padding: 5px;
+	margin-left: 2%;
+	transition: all 1s;
+	&:hover {
+		background: $green;
+		border: 2px solid $green;
+		color: $gray;
+	}
+}
+.hamburger {
+	display: none;
+	@media (max-width: 480px) {
+		display: block;
+	}
+}
+.headerContentSocialBox {	
+	a {
+		margin: 0 2% 0 1%;
+		transition: all 1s;
+		@extend .hoverFA;
+		@media (max-width: 900px) {
+			justify-content:flex-end;
+		}
+	}
+	.subscribeButton + i {
+		margin-left: 4%;
+	}
+}
+.subscribeButton {
+	background: $green;
+	color: white;
+	padding: 10px;
+	border-radius: 20px;
+	transition: all 1s;
+	&:hover {
+		background: $gray;
+		color: $white;
+	}
+	@media (max-width: 900px) {
+		justify-content: flex-start;
+	}
+}
+.episodes__All, .episodes__One, .episodes__Two, .episodes__Three {
+	color: white;
+	border-bottom: 2px solid transparent;
+	transition: all 1s;
+	&:hover {
+	border-bottom: 2px solid $green;
+	}
+}
+.playButtonBg {
+	background: black;
+	margin: 0;
+	padding: 0;
+	@media (max-width: 480px) {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: 999;
+	}
+}
+.playButtonDiv {
+	width: 50%;
+	background: black;
+	display:block;
+	margin: 0 auto;
+	@media (max-width: 480px) {
+		width: 100%;
+	}
+}
+.seasonPicker {
+	padding: 0;
+	width: 40%;
+	li {
+		display: inline-block;
+		margin-right: 1%;
+		@media(max-width:480px) {
+			display: block;
+		}
+	}
+}
+.episodeContainer__ContentBoxPlay {
+	a {
+		@extend .forceH3;
+		@extend .hoverFA;
+	}
+}
+.moreButton {
+	display: block;
+	width: 100%;
+	background: $gray;
+	text-align: center;
+	color: white;
+	padding: 10px 0;
+	transition: all 1s;
+	&:hover {
+		background: $white;
+		color: $gray;
+	}
+}
+.donations__donateButton {
+	background: $white;
+	width: 150px;
+	display: block;
+	margin: 10px auto;
+	padding: 10px 0;
+	border-radius: 10px;
+	text-align: center;
+	transition: all 1s;
+	&:hover {
+		background: $gray;
+		color: $white;
+	}
+}

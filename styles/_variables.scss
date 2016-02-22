@@ -1,0 +1,231 @@
+$green: #0CE782;
+$darkgray: #1A171A;
+$black: #131013;
+$white:#FCFCFC;
+$gray: #383538;
+$section-padding: 20px 0;
+$headingtext:'PT Sans', Garamond, sans-serif;
+$fillertext: 'Roboto', sans-serif;
+
+/***** FONT SIZING FOR MEDIA QUERIES *****/
+
+$p-font-sizes: (
+	null: 12px,
+  480px : 12px,
+  900px: 18px
+);
+$h2-font-sizes: (
+	null: 26px,
+	480px: 26px,
+	900px: 30px
+);
+$h3-font-sizes: (
+	null: 10px,
+	480px: 10px,
+	900px: 14px
+	);
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+/***** EACH LOOP FOR ABOUT SECTION BACKGROUNDS *****/
+
+$list: 1 2 3 4 5 6;
+ @each $podimg in $list {
+  .aboutPod-#{$podimg} {   
+      background: url("../assets/podcast-#{$podimg}.jpg");
+      background-size: cover;
+      background-position: center;
+  }
+}
+
+/**** OVERALL FONT STYLING ******/
+
+h2 {
+  @include font-size($h2-font-sizes);
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: $headingtext;
+}
+h3 {
+  @include font-size($h3-font-sizes);
+  color: $green;
+  text-transform: uppercase;
+  font-family: $fillertext;
+}
+h4 {
+  color: gray;
+  text-transform: uppercase;
+}
+p {
+  @include font-size($p-font-sizes);
+  color: white;
+  font-family: $fillertext;
+  opacity: .7;
+}
+a {
+  text-decoration: none;
+  font-family: $fillertext;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/***** ABOUT FONTS *****/
+
+aside {
+  h2 {
+    color: black;
+  }
+  p {
+    color: $gray;
+  }
+  h3 {
+    color: black;
+  }
+  .left, .right {
+    h2 {
+      color: $green;
+    }
+    i {
+      @extend .hoverGreen;
+    }
+  }
+}
+
+/**** DONATIONS FONTS *****/
+
+section {
+  h2 {
+    text-align: center;
+    padding: 10px;
+  }
+  p {
+    text-align: justify;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+
+/***** FOOTER FONTS *****/
+
+footer {
+  a {
+    @extend .hoverGreen;
+  }
+  ul {
+    padding: 0;
+    list-style:none;
+  }
+  p {
+    color: gray;
+    border-bottom: 1px solid $gray;
+  }
+}
+.footer__ContentSocialBox {
+  a {
+    @extend .hoverFA;
+    i {
+    margin-right: 2%;
+    }
+  }
+}
+.footer__footerLinks {
+  ul li {
+    link-style: none;
+    display: inline;
+      a {
+        @extend .hoverGreen;
+        color: lighten($gray,20);
+      }
+  }
+}
+.footer__Bottom a {
+  @include font-size($p-font-sizes);
+  @extend .hoverGreen;
+  text-decoration: none;
+  color: gray;
+}
+
+/***** FONT OVERRIDES AND TEXT DISPLAY CLASSES ******/
+
+.forceH3 {
+  @include font-size($h3-font-sizes);
+  color: $green;
+  text-transform: uppercase;
+  font-family: $fillertext;
+  transition: all 1s;
+  padding: 1px;
+  border-radius: 2px;
+  &:hover {
+    i {
+      color: $gray;
+    }
+    background: $green;
+    color: $gray;
+    border-radius: 2px;
+  }
+}
+.italic {
+  font-style: italic;
+}
+.white {
+  color: $white;
+}
+.hoverGreen {
+  color: $gray;
+  transition: all 1s;
+  &:hover {
+    color: $green;
+  }
+}
+.hoverFA {
+  i {
+    transition: all 1s;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+/**** FONT AWESOME *****/
+
+.fa {
+  color: white;
+}
+.fa-clock-o, .fa-play {
+  color: $green;
+  margin-right: 10px;
+}
+
+/**** AUDIO JS PLUGIN *****/
+
+.audiojs {
+  margin: 0 auto;
+  background: black;
+  border-left: 1px solid $gray;
+  border-right: 1px solid $gray;
+  .play-pause {
+    border-right: 1px solid $gray;
+    
+  }
+  p.pause {
+    background-position: -7px 15%;
+    height: 100%;
+    width: 25px;
+  }
+  .time, .played {
+    color: $green;
+  }
+}
