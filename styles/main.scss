@@ -118,6 +118,7 @@ main {
 
 aside {
 	background:$white;
+	padding: $section-padding;
 	.left {
 		text-align: left;
 	}
@@ -422,6 +423,7 @@ footer {
 	color: white;
 	padding: 10px 0;
 	transition: all 1s;
+	border: none;
 	&:hover {
 		background: $white;
 		color: $gray;

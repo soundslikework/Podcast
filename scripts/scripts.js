@@ -1,5 +1,10 @@
 	$(function(){
-	
+		/***** LOAD MORE *****/
+		$('.moreButton').on('click', function(e) {
+			e.preventDefault();
+			$('div.episodeContainer').append('<div class="episodeContainer__ContentBox aboutPod-1 three"><div class="contentBoxWhiteLine"></div><div class="headerContentBoxTopRow"><h3>Season 3</h3><h3><i class="fa fa-clock-o fa-flip-horizontal"></i>59 Mins</h3></div><h2>Episode 52: Chipotle Peppers</h2><p>October 11, 2015</p><h3 class="episodeContainer__ContentBoxPlay"><a href="#"><i class="fa fa-play"></i>Play Episode</a></h3></div>');
+		})
+
 		/***** AUDIO JS *****/
   	
   		audiojs.events.ready(function() {
@@ -48,4 +53,4 @@
 			$('.three').show();
 
 		});
-	});
+	}); //END DOC READY
