@@ -26,6 +26,7 @@ $(function () {
 	$('.hamburger').on('click', function () {
 		event.preventDefault();
 		$('.headerLinks ul').slideToggle();
+		$('.headerLinks ul').css('display','flex');
 	});
 
 	/********** EPISODE FILTERS *******/
